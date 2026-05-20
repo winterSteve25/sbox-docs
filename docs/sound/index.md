@@ -9,7 +9,7 @@ updated: 2026-04-22
 
 s&box has a full audio system including 2D/3D sound playback, voice chat, positional audio, an audio effects pipeline, and lip sync support.
 
-For music and programmatic audio streaming, see [Audio](../media/audio.md).
+For music and programmatic audio streaming, see [Audio](/media/audio.md).
 
 ## Components
 
