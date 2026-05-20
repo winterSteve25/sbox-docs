@@ -1,6 +1,6 @@
 ---
 title: "Dedicated Servers"
-icon: "settings_input_hdmi"
+icon: "📦"
 created: 2024-11-07
 updated: 2025-04-15
 ---

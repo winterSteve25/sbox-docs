@@ -1,6 +1,6 @@
 ---
 title: "Testing Multiplayer"
-icon: "🥼"
+icon: "🧪"
 created: 2023-11-24
 updated: 2024-03-28
 ---

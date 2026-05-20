@@ -1,6 +1,6 @@
 ---
 title: "RPC Messages"
-icon: "✉️"
+icon: "📩"
 created: 2023-11-25
 updated: 2024-11-29
 ---

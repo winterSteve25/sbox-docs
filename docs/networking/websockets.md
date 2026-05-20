@@ -1,6 +1,6 @@
 ---
 title: "WebSockets"
-icon: "public"
+icon: "🌐"
 created: 2024-09-26
 updated: 2024-09-26
 ---
