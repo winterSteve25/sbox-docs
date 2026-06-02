@@ -19,7 +19,7 @@ Our intention is to let you export the things that you make in our engine and re
 
 ## [Download & Install](/getting-started/installation.md)
 
-Get the s&box editor through Steam and start building. Available to everyone through the developer preview.
+Get the s&box editor [on Steam](https://store.steampowered.com/app/590830/sbox/) and start building.
 
 ## [System Requirements](/getting-started/system-requirements.md)
 

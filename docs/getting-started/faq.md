@@ -9,9 +9,7 @@ updated: 2025-09-05
 
 ## How do I get it?
 
-We'll be releasing [s&box on Steam](https://store.steampowered.com/app/590830/sbox/) on the 28th April for $20.
-
-Access to the developer preview is now closed — you may or may not get to keep it post release depending on play time, development or skins purchased.
+[s&box is available on Steam](https://store.steampowered.com/app/590830/sbox/) for $20.
 
 ## Are you using workshop?
 

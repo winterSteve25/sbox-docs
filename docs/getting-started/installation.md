@@ -7,7 +7,7 @@ updated: 2026-04-09
 
 # Download & Install
 
-The s&box editor and game are available to everyone through the developer preview.
+The s&box editor and game are available [on Steam](https://store.steampowered.com/app/590830/sbox/).
 
 ## Install
 
