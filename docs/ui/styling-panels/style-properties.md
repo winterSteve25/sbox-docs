@@ -21,11 +21,24 @@ Anything marked in **bold\*** may behave differently to how you'd expect on web.
 | Color | Can have alpha | `color: #fff;`,`color: #ffffffaa;`,`color: rgba(red, 0.5);` |
 | Length | A dimension, pixel or relative. | `left: 10px;`,`left: 10%;`,`left: 10em;`,`left: 10vw;`,`mask-angle: 10deg;` |
 
+## Value Syntax & Units
+
+These work across most properties:
+
+| Feature | Description | Examples |
+|---------|-------------|----------|
+| `min()` / `max()` / `clamp()` | Math functions usable anywhere a `Length` is accepted. | `width: min(100px, 50%);`,`width: clamp(10px, 50%, 200px);` |
+| CSS-wide keywords | `inherit`, `initial`, `unset` and `revert` are accepted on any property, including shorthands. | `color: inherit;`,`margin: unset;` |
+| `currentColor` | Resolves to the element's current `color` value. | `border-color: currentColor;` |
+| `oklch()` / `lab()` / `hwb()` | Additional color syntaxes, on top of hex / `rgb()` / `rgba()`. | `color: oklch(0.7 0.15 200);` |
+| Viewport units | `dvh`, `svh`, `lvh` and `dvw` are treated the same as `vh` / `vw`. | `height: 100dvh;` |
+| Time units | Durations accept `ms` as well as `s`. | `transition: opacity 200ms ease;`,`animation-duration: 500ms;` |
+
 ## Custom Style Properties
 
 | Name | Parameters | Examples / Notes |
 |------|------------|------------------|
-| aspect-ratio | Float, Float (Optional) | `aspect-ratio: 1;`,`aspect-ratio: 16/9;` |
+| aspect-ratio | Float, Float (Optional) / auto | `aspect-ratio: 1;`,`aspect-ratio: 16/9;`,`aspect-ratio: auto;` |
 | background-image-tint | Color      | Multiplies the `background-image` by this Color. Not a replacement for `filter` or `backdrop-filter`. |
 | border-image-tint | Color      | Multiplies the `border-image` by this Color. |
 | mask-scope | default / filter | `default` will apply the mask normally, `filter` will use the mask to blend between unfiltered and filtered. |
@@ -39,7 +52,7 @@ Anything marked in **bold\*** may behave differently to how you'd expect on web.
 
 | Name | Parameters | Examples / Notes |
 |------|------------|------------------|
-| align-content | autoflex-endflex-startcenterstretchspace-betweenspace-aroundbaseline |                  |
+| align-content | auto / flex-start / flex-end / center / stretch / space-between / space-around / start / end / baseline |                  |
 | align-items | Same as `align-content` |                  |
 | align-self | Same as `align-content` |                  |
 | animation | Fills in the properties below |                  |
@@ -96,7 +109,7 @@ Anything marked in **bold\*** may behave differently to how you'd expect on web.
 | border-top-left-radius | Length     |                  |
 | border-top-right-radius | Length     |                  |
 | border-top-width | Length     |                  |
-| border-width | Length     |                  |
+| border-width | Length (1–4 values) | Accepts 1–4 values like the CSS shorthand. eg. `border-width: 1px;`,`border-width: 1px 2px;`,`border-width: 1px 2px 3px 4px;` |
 | bottom | Length     |                  |
 | box-shadow | Length,<br>Length (optional),<br>Length (blur, optional),<br>Length (spread, optional),<br>Color | `box-shadow: 2px 2px 4px black;` |
 | color | Color /<br>linear-gradient(Color, Color) /<br>radial-gradient(Color, Color) /<br>conic-gradient(Color, Color) |                  |
@@ -104,7 +117,7 @@ Anything marked in **bold\*** may behave differently to how you'd expect on web.
 | content | string     | Sets the text of a Label.<br>eg. `content: "Loading…";` |
 | cursor | none / pointer / progress / wait / crosshair / text / move / not-allowed / any custom cursors |                  |
 | **display\*** | flex (default) / none | Everything is flex by default |
-| filter | Same as `backdrop-filter` |                  |
+| filter | Same as `backdrop-filter` / none | `none` clears any filters. |
 | filter-blur | Length     |                  |
 | filter-border-color | Color      |                  |
 | filter-border-width | Length     |                  |
@@ -118,25 +131,40 @@ Anything marked in **bold\*** may behave differently to how you'd expect on web.
 | filter-tint | Length     |                  |
 | flex-basis | Length     |                  |
 | flex-direction | row (default) / row-reverse / column / column-reverse |                  |
+| flex-flow | flex-direction, flex-wrap | Shorthand for `flex-direction` and `flex-wrap`. eg. `flex-flow: row wrap;` |
 | flex-grow | Float      |                  |
 | flex-shrink | Float      |                  |
 | flex-wrap | nowrap (Default) / wrap / wrap-reverse |                  |
+| font | Fills in the font properties below | Shorthand for `font-style`, `font-weight`, `font-size`, `line-height` and `font-family`. eg. `font: italic bold 16px/1.4 Poppins;` |
 | font-color | Color      |                  |
-| **font-family\*** | String     | Specify a single font, based on the name of the font itself, not the filename.<br>eg. `font-family: Comic Sans MS;` |
-| font-size | Length     |                  |
-| font-smooth | auto / always / never | `never` is good for pixel fonts |
+| **font-family\*** | String     | Specify a single font, based on the name of the font itself, not the filename.<br>eg. `font-family: Comic Sans MS;`<br>Generic families (`serif`, `sans-serif`, `monospace`) are mapped to a default font. |
+| font-size | Length / xx-small / x-small / small / medium / large / x-large / xx-large / xxx-large |                  |
+| font-smooth | auto / always / never / none | `never` is good for pixel fonts |
 | font-style | normal  (default) / italic |                  |
 | font-variant-numeric | normal / tabular-nums |                  |
 | font-weight | normal (default) / bold / light / bolder / lighter / black / int | `font-weight: bold;`,`font-weight: 300;` |
-| gap  | Length, Length (optional) | Shorthand for `row-gap` and `column-gap`, specified the size of gutters. |
+| gap  | Length, Length (optional) / normal | Shorthand for `row-gap` and `column-gap`, specified the size of gutters. |
 | height | Length     |                  |
-| image-rendering | auto (default) / anisotropic / bilinear / trilinear / point / pixelated / nearest-neighbour |                  |
+| image-rendering | auto (default) / anisotropic / bilinear / trilinear / point / pixelated / nearest-neighbour / crisp-edges | `crisp-edges` uses point sampling. |
+| inset | Length (1–4 values) | Shorthand for `top`, `right`, `bottom` and `left`. |
+| inset-block | Length, Length (optional) | Shorthand for `inset-block-start` and `inset-block-end`. |
+| inset-block-end | Length     |                  |
+| inset-block-start | Length     |                  |
+| inset-inline | Length, Length (optional) | Shorthand for `inset-inline-start` and `inset-inline-end`. |
+| inset-inline-end | Length     |                  |
+| inset-inline-start | Length     |                  |
 | justify-content | Same as `align-content` |                  |
 | left | Length     |                  |
 | letter-spacing | Length / normal |                  |
 | line-height | Length     |                  |
 | margin | Fills in the properties below |                  |
+| margin-block | Length, Length (optional) | Shorthand for `margin-block-start` and `margin-block-end`. |
+| margin-block-end | Length     |                  |
+| margin-block-start | Length     |                  |
 | margin-bottom | Length     |                  |
+| margin-inline | Length, Length (optional) | Shorthand for `margin-inline-start` and `margin-inline-end`. |
+| margin-inline-end | Length     |                  |
+| margin-inline-start | Length     |                  |
 | margin-left | Length     |                  |
 | margin-right | Length     |                  |
 | margin-top | Length     |                  |
@@ -156,13 +184,20 @@ Anything marked in **bold\*** may behave differently to how you'd expect on web.
 | min-height | Length     |                  |
 | min-width | Length     |                  |
 | mix-blend-mode | normal / lighten / multiply |                  |
-| opacity | Float      |                  |
+| object-fit | fill (default) / contain / cover / none / scale-down | `scale-down` is treated as `contain`. |
+| opacity | Float / Percentage | `opacity: 0.5;`,`opacity: 50%;` |
 | order | int        |                  |
-| overflow | visible (default) / hidden / scroll |                  |
+| overflow | visible (default) / hidden / scroll / auto | `auto` maps to `scroll`. |
 | overflow-x | Same as `overflow` |                  |
 | overflow-y | Same as `overflow` |                  |
 | padding | Fills in the properties below |                  |
+| padding-block | Length, Length (optional) | Shorthand for `padding-block-start` and `padding-block-end`. |
+| padding-block-end | Length     |                  |
+| padding-block-start | Length     |                  |
 | padding-bottom | Length     |                  |
+| padding-inline | Length, Length (optional) | Shorthand for `padding-inline-start` and `padding-inline-end`. |
+| padding-inline-end | Length     |                  |
+| padding-inline-start | Length     |                  |
 | padding-left | Length     |                  |
 | padding-right | Length     |                  |
 | padding-top | Length     |                  |
@@ -173,7 +208,7 @@ Anything marked in **bold\*** may behave differently to how you'd expect on web.
 | **position\*** | static (default) / relative / absolute | See how it works: <https://yogalayout.com/docs/absolute-relative-layout/> |
 | right | Length     |                  |
 | row-gap | Length     |                  |
-| text-align | left (default) / center / right |                  |
+| text-align | left (default) / center / right / justify / start / end |                  |
 | text-background-angle | Length     |                  |
 | text-decoration | Color / Length / LineStyle, Line | Properties can be in any order and you can have multiple lines. |
 | text-decoration-color | Color      |                  |
@@ -187,7 +222,7 @@ Anything marked in **bold\*** may behave differently to how you'd expect on web.
 | text-shadow | Same as `box-shadow` |                  |
 | text-transform | none (default) / capitalize / lowercase / uppercase |                  |
 | top  | Length     |                  |
-| transform | Fills in the properties below |                  |
+| transform | Fills in the properties below | `scale()` accepts comma-separated arguments. eg. `transform: scale(2, 0.5);` |
 | transform-origin | Length, Length, Length (optional) |                  |
 | transform-origin-x | Length     |                  |
 | transform-origin-y | Length     |                  |
@@ -196,10 +231,10 @@ Anything marked in **bold\*** may behave differently to how you'd expect on web.
 | transition-duration | Float      |                  |
 | transition-property | String     |                  |
 | transition-timing-function | linear (default) / ease / ease-in-out / ease-out / ease-in |                  |
-| white-space | normal / nowrap / pre | Use `pre` to format tabs and newlines. |
+| white-space | normal / nowrap / pre / pre-wrap / break-spaces | Use `pre` to format tabs and newlines. |
 | width | Length     |                  |
-| word-break | normal / break-all |                  |
-| word-spacing | Length     |                  |
+| word-break | normal / break-all / break-word |                  |
+| word-spacing | Length / normal |                  |
 | z-index | int        |                  |
 
 ## Custom Pseudo-Classes
