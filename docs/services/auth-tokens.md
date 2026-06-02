@@ -21,7 +21,7 @@ var token = await Sandbox.Services.Auth.GetToken( "YourServiceName" );
 
 # Validating Tokens
 
-To validate a token on your backend, you need to make a call to the `services.facepunch.com/sbox` API using the `auth/token` endpoint.
+To validate a token on your backend, you need to make a call to the `public.facepunch.com/sbox` API using the `auth/token` endpoint.
 
 Here is an example of how to validate a token in C# using `System.Net.Http`
 
