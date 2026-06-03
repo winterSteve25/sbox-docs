@@ -20,7 +20,7 @@ public sealed class MyBrightnessEffect: BasePostProcess<MyBrightnessEffect>
 	public override void Render()
 	{
 		float brightness = GetWeighted( x => x.Brightness );
-		if ( brightness.AlmostEqual( 0.0f ) ) return
+		if ( brightness.AlmostEqual( 0.0f ) ) return;
 
 		Attributes.Set( "brightness", 1 + brightness );
 

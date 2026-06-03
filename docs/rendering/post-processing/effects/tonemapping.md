@@ -26,6 +26,7 @@ The s&box tonemapping component supports the following properties:
   * **Auto Exposure Enabled**: toggles automatic exposure adaptation.
   * **Minimum Exposure**: lower bound for exposure when auto exposure is active.
   * **Maximum Exposure**: upper bound for exposure when auto exposure is active.
+  * **Exposure Compensation**: offset applied on top of the calculated exposure.
   * **Rate**: speed at which exposure adapts to scene brightness changes.
 
 ## Modes
