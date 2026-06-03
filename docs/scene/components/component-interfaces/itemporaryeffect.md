@@ -13,7 +13,12 @@ The interface Component.ITemporaryEffect is used on a component that comes to an
 ```csharp
 	public interface ITemporaryEffect
 	{
+		// Should return true if the effect is active in a visible way
 		bool IsActive { get; }
+
+		// Indicates to the target object that we want it to die. If it's looping then
+		// it should stop now and put itself in a state where it will eventually die.
+		void DisableLooping() { }
 	}
 ```
 

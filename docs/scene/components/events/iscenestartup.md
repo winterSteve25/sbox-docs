@@ -67,7 +67,7 @@ We're using the term host here, which can be easily misinterpreted. By host we a
 # Examples
 
 ```csharp
-public sealed class MyGameManager : GameObjectSystem<GameManager>, ISceneStartup
+public sealed class MyGameManager : GameObjectSystem<MyGameManager>, ISceneStartup
 {
 	public MyGameManager( Scene scene ) : base( scene )
 	{

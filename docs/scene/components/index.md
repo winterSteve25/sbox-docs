@@ -94,11 +94,11 @@ You can get component references as variables in two main ways.
 
 # Removing Components
 
-To remove a component from a GameObject, you call DestroyComponent(). You cannot reuse this component - at this point it is destroyed forever and you should stop using it.
+To remove a component from a GameObject, you call Destroy(). You cannot reuse this component - at this point it is destroyed forever and you should stop using it.
 
 ```csharp
 var depthOfField = GetComponent<DepthOfField>();
-dephOfField.Destroy();
+depthOfField.Destroy();
 ```
 
 

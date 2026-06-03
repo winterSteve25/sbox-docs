@@ -93,7 +93,7 @@ The animator feature is optional. Right click on the animator tab to disable it.
 		void StartPressing( Component target ) { }
 
 		/// <summary>
-		/// We have started using something (use was pressed)
+		/// We have stopped using something
 		/// </summary>
 		void StopPressing( Component target ) { }
 
