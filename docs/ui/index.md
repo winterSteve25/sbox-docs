@@ -44,7 +44,7 @@ var myPanel = new MyPanel();
 myPanel.Parent = this;
 ```
 
-The other is by using the following syntax within a [Razor Panels] file:
+The other is by using the following syntax within a [Razor Panels](/ui/razor-panels/index.md) file:
 
 ```markup
 <MyPanel />

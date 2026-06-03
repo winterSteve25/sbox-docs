@@ -46,7 +46,7 @@ Generally, we expect you to make a highpoly to bake down onto your lowpoly. What
 
 ![Lowpoly](./images/phones_02.mp4)
 
-I aimed for anything under **4k tris** for my lowpoly**,** considering it's size and complexity. Anything a bit higher would be fine, but always worth considering your tricount. If you're finding it hard to work out how high or low your tricount should be, read our [Guidelines & Quality Bar](https://sbox.game/dev/doc/clothing/guidelines-quality-bar/) page segment on Tricounts.
+I aimed for anything under **4k tris** for my lowpoly**,** considering it's size and complexity. Anything a bit higher would be fine, but always worth considering your tricount. If you're finding it hard to work out how high or low your tricount should be, read our [Guidelines & Quality Bar](/assets/clothing/guidelines-quality-bar.md) page segment on Tricounts.
 
 
 ### UVs
@@ -91,7 +91,7 @@ We'd steer away from completely flat and undetailed textures, there'd be rare ex
 
 ![LODs](./images/headphones_04.mp4)
 
-You can follow our segment on LODs at our [Guidelines & Quality Bar](https://sbox.game/dev/doc/clothing/guidelines-quality-bar/) page. Which breaks down what tricounts you should aim for on each LOD.
+You can follow our segment on LODs at our [Guidelines & Quality Bar](/assets/clothing/guidelines-quality-bar.md) page. Which breaks down what tricounts you should aim for on each LOD.
 
 
 The tricount for each LOD of the Headphones -
@@ -118,4 +118,4 @@ Making a Human version of a hat is relatively easy, compared to other assets. Mo
 The Human version when exported, will need it's own .vmdl file, so in this example I **duplicated** my `headphones.vmdl` file, then **renamed** to `headphones_human.vmdl` - I kept the same set-up as the original vmdl file but changed the mesh files to our human version we just exported.
 
 
-You can find more information about creating a human version of an asset on our [Morphing to Humans](https://sbox.game/dev/doc/clothing/morphing-to-humans/) page.
+You can find more information about creating a human version of an asset on our [Morphing to Humans](/assets/clothing/morphing-to-humans.md) page.

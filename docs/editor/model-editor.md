@@ -120,7 +120,7 @@ You can check the compiled hierarchy in the "Compiled Preview Outliner", under "
 
 # What's "Base Model"?
 
-Think of it as an equivalent of Source 1's [$includemodel]() which was used by your "main" model to reference animation-only models.
+Think of it as an equivalent of Source 1's `$includemodel` which was used by your "main" model to reference animation-only models.
 
 However, in s&box, it works the other way around! For example, if you want to extend the Citizen character with new animations, your new VMDL (e.g. "citizen_my_custom_version.vmdl") would be referencing "citizen.vmdl" as its "Base Model".
 

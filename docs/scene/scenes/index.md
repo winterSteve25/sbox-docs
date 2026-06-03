@@ -7,7 +7,7 @@ updated: 2025-06-15
 
 # Scenes
 
-A [scene]() is a collection of [GameObjects].
+A scene is a collection of [GameObjects](/scene/gameobject.md).
 
 # Getting the Current Scene
 
