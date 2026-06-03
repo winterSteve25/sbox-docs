@@ -36,5 +36,4 @@ Creating an editor project lets you do a few special things.
 * Create new Control Widgets
 * Create new Editor Docks
 * Create [Editor Apps](/editor/editor-apps.md)
-* Create [Editor Tools](/editor/editor-tools/index.md)
 * Create [Asset Previews](/editor/asset-previews.md)

@@ -30,7 +30,7 @@ public class MyCustomControlWidget : ControlObjectWidget
     // Whether or not this control supports multi-editing (if you have multiple GameObjects selected)
     public override bool SupportsMultiEdit => false;
 
-    public MyCustomControlWidget(SerializedProperty property) : base(property)
+    public MyCustomControlWidget(SerializedProperty property) : base( property, true )
     {
         Layout = Layout.Row();
         Layout.Spacing = 2;
@@ -85,7 +85,7 @@ public class CharacterInspector : Widget, IAssetInspector
         var header = Layout.Add( new Label( "My Inspector!", this ) );
         header.SetStyles( "font-size: 42px; font-weight: 600; font-family: Poppins" );
 
-        // Create a ontrolSheet that will display all our Properties
+        // Create a ControlSheet that will display all our Properties
 		MainSheet = new ControlSheet();
 		Layout.Add( MainSheet );
   
@@ -93,7 +93,7 @@ public class CharacterInspector : Widget, IAssetInspector
         var button = Layout.Add( new Button( "Randomize", "casino", this ) );
         button.Clicked += () =>
         {
-        	foreach ( var prop in Test.GetSerialized() )
+        	foreach ( var prop in Character.GetSerialized() )
         	{
         		// Randomize all the float values from 0-100
         		if ( prop.PropertyType != typeof( float ) ) continue;
