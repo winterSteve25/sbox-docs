@@ -66,7 +66,7 @@ Similarly to Rpc.Owner, adding this will mean the function is only called on the
 When defining an RPC, you can define a number of flags.
 
 ```csharp
-[Rpc.Broadcast( NetFlags.Unreliable | NetFlag.OwnerOnly )]
+[Rpc.Broadcast( NetFlags.Unreliable | NetFlags.OwnerOnly )]
 public static void PlaySoundAllClients( string soundName, Vector3 position )
 {
   // ...
@@ -121,7 +121,7 @@ using ( Rpc.FilterInclude( c => c.DisplayName == "Garry" ) )
 
 # Caller Information
 
-You can check which connection called the method using the `Rpc.Caller` class.
+You can check which connection called the method using the `Rpc.Caller` property.
 
 ```csharp
 void OnPressed()
