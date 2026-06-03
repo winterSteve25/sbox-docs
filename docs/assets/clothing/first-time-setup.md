@@ -69,7 +69,7 @@ By the end of this set up, you should have the citizen in your 3D software of ch
 
 We also have the `citizen_human_male_REF` and `citizen_human_female_REF`  which both have the same use-case, but for the human versions of your clothing. 
 
-These can be found in `sbox\game\addons\citizen\Assets\models\citizen_human`. 
+These can be found in `sbox\addons\citizen\Assets\models\citizen_human`. 
 
 
 ![](./images/grabbing-human-files.png)

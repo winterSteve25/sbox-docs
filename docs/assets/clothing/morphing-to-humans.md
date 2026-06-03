@@ -183,7 +183,7 @@ If you're making major changes to the topology to fit it better around the human
 
  
 
-We also have the `citizen_human_female_REF` which is used for creating female versions of clothing. Which can be found in `sbox\game\addons\citizen\Assets\models\citizen_human`. 
+We also have the `citizen_human_female_REF` which is used for creating female versions of clothing. Which can be found in `sbox\addons\citizen\Assets\models\citizen_human`. 
 
 
 A **female version** of clothing is **not required** for every clothing piece. Female versions are expected for clothing like short sleeve shirts, shorts, clothing that shows a notable amount of the base body underneath. 
