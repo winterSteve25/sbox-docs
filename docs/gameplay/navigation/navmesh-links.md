@@ -31,12 +31,12 @@ Custom NavMeshLinkComponent:
 ```csharp
 public sealed class CustomLink : NavMeshLink
 {
-	protected virtual void OnLinkEntered( NavMeshAgent agent )
+	protected override void OnLinkEntered( NavMeshAgent agent )
 	{
  
 	}
 
-	protected virtual void OnLinkExited( NavMeshAgent agent )
+	protected override void OnLinkExited( NavMeshAgent agent )
 	{
  
 	}
@@ -74,14 +74,14 @@ Agent.AutoTraverseLinks = false;
 Afterwards there are couple options to take over the link traversal and handle it yourself:
 
 
-1. By Overriding  `virtual void NavMeshLink.LinkEntered()`
+1. By Overriding  `virtual void NavMeshLink.OnLinkEntered( NavMeshAgent )`
 2. By subscribing to the  `Action<NavMeshAgent> NavMeshLink.LinkEntered`  event
 3. By subscribing to the  `Action NavMeshAgent.LinkEnter`  event
 4. Constantly checking for  `bool NavMeshAgent.IsTraversingLink`  in an  `OnUpdate` method
 
 In some cases you will want the link to handle the traversal, in others you may want to handle it on the agent.
 
-Regardless, of which you choose, after the traversal is finished make sure to call `NavMeshAgent.CompleteLink()` to continue the regular agent navigation.
+Regardless, of which you choose, after the traversal is finished make sure to call `NavMeshAgent.CompleteLinkTraversal()` to continue the regular agent navigation.
 
 In the following we provide a few examples for custom traversal, that can be modified to your needs.
 
@@ -291,7 +291,7 @@ public sealed class NavigationLinkTraversal : Component
 		Model.Set( "b_grounded", false );
 		Model.Set( "b_jump", true );
 
-		// Physiscs will drive our jump so disable game object position sync
+		// Physics will drive our jump so disable game object position sync
 		Agent.UpdatePosition = false;
 
 		var start = Agent.CurrentLinkTraversal.Value.AgentInitialPosition;
