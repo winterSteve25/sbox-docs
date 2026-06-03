@@ -19,7 +19,7 @@ If an object is unowned by a connection then it is simulated by the host.
 By default, a networked object's owner can only be changed by the host. However, the current owner of the object can change that behavior by setting its `OwnerTransfer` value.
 
 
-```javascript
+```csharp
 // Make it so anyone can change the owner of this networked object.
 go.Network.SetOwnerTransfer( OwnerTransfer.Takeover );
 ```
