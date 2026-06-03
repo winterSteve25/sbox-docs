@@ -48,7 +48,7 @@ A basic VR setup should also have a VR Tracked Object component on the camera, s
 
 ### Tracking
 
-On any object you want to track the player's controllers, add a VR Tracked Component for the object you want to track.
+On any object you want to track the player's controllers, add a VR Tracked Object component for the object you want to track.
 
 For example, this component will make the GameObject it's attached to follow the player's left controller:
 

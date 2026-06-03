@@ -55,12 +55,9 @@ If the Controller has a gyroscope or an accelerometer, then you can get motion d
 
 ```csharp
 InputMotionData motionData = Input.MotionData;
-if(motionData is not null)
-{
-  Vector3 acceleration = motionData.Acceleration; // Accelerometer
-  Vector3 angularVelocity = motionData.AngularVelocity; // Gyroscope
-  // Process the data as needed...
-}
+Vector3 acceleration = motionData.Accelerometer; // Accelerometer
+Angles gyroscope = motionData.Gyroscope; // Gyroscope
+// Process the data as needed...
 ```
 
 # Local Multiplayer
