@@ -32,7 +32,7 @@ public void OnZombieKilled()
 
 Or just set it directly..
 
-```javascript
+```csharp
 public void OnGameFinished()
 {
     Sandbox.Services.Stats.Increment( "wins", 1 );

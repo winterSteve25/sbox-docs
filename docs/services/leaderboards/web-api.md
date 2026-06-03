@@ -11,7 +11,7 @@ The API for leaderboards is publically accessible. Have fun!
 
 
 ```none
-https://public.facepunch.com/sbox/package/leaderboard/{package_ident}/
+https://public.facepunch.com/sbox/package/leaderboard/2/?ident={package_ident}
 ```
 
 
@@ -84,34 +84,31 @@ Allows a list of steamids to always show on the leaderboard, even if they're not
 
 
 ```none
-https://public.facepunch.com/sbox/package/leaderboard/facepunch.ss1/?stat=zombies_killed
+https://public.facepunch.com/sbox/package/leaderboard/2/?ident=facepunch.ss1&stat=zombies_killed
 ```
 
 ```json
 {
-  Stat: "zombies_killed",
-  TotalEntries: 2588,
-  Entries: 
+  "Stat": "zombies_killed",
+  "TotalEntries": 2588,
+  "Entries":
   [
     {
-      Rank: 1,
-      Value: 645806,
-      SteamId: 76561198043785940,
-      CountryCode: "us",
-      DisplayName: "puxorb",
-      Timestamp: "2024-08-23T03:44:17.0174014+00:00",
-      Data: { }
+      "Rank": 1,
+      "Value": 645806,
+      "SteamId": 76561198043785940,
+      "CountryCode": "us",
+      "DisplayName": "puxorb",
+      "Timestamp": "2024-08-23T03:44:17.0174014+00:00"
     },
     {
-      Rank: 2,
-      Value: 310250,
-      SteamId: 76561198053736750,
-      CountryCode: "au",
-      DisplayName: "Rin",
-      Timestamp: "2024-08-19T18:28:10.6930596+00:00",
-      Data: { }
+      "Rank": 2,
+      "Value": 310250,
+      "SteamId": 76561198053736750,
+      "CountryCode": "au",
+      "DisplayName": "Rin",
+      "Timestamp": "2024-08-19T18:28:10.6930596+00:00"
     }
-  ],
-  DateDescription: null,
+  ]
 }
 ```

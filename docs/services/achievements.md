@@ -29,7 +29,7 @@ When your achievement unlock mode is set to "Stat" it will automatically be unlo
 
 An example of a stat based achievement would be the "100 coins".
 
-You would do `Stat.Increment( "coins", 1 )` in your code every time you collected a coin, then you can set your achievement to this..
+You would do `Stats.Increment( "coins", 1 )` in your code every time you collected a coin, then you can set your achievement to this..
 
 | Property | Value | Explanation |
 |----------|-------|-------------|
