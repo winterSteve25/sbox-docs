@@ -38,7 +38,7 @@ You will **never** need to add or adjust files within the core folders (e.g. the
 ## Grabbing Citizen Files 🤏
 
 
-![Locating citizen asset files](./images/docs/assets/clothing/images/grab-files.mp4)
+![Locating citizen asset files](./images/grab-files.mp4)
 
 Find useful files in `Steam\steamapps\common\sbox\addons\citizen\Assets\models\citizen`
 
@@ -50,13 +50,6 @@ In that folder can use `citizen_REF.fbx`, which supplies you with the citizen me
 
 :::info
 Moving forward, we will use `citizen_REF.fbx` to build our clothing around it.
-
-:::
-
-
-
-:::tip
-By the end of this set up, you should have the citizen in your 3D software of choice and you'll be ready to make some clothing.
 
 :::
 

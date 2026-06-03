@@ -42,8 +42,6 @@ Triangle count should scale to the complexity of the design, and how much it cov
 
 :::
 
-Further information on this specific topic can be found in the [Clothing Topology](/dev/doc/in-progress/creating-clothing/clothing-topology/) page.
-
 
 
 ---
@@ -73,8 +71,6 @@ Another example :
 ![](./images/another-example.png)
 
 Well-made topology is very important to make sure the mesh will deform, bend, and stretch properly once your asset is skinned (rigged). Generally, we have denser amount of quads in areas like the knees, elbows, and any place where the body will crease and bend.
-
-For more information, please read through the [Clothing Topology](/dev/doc/in-progress/creating-clothing/clothing-topology/) page.
 
 
 
@@ -245,7 +241,7 @@ At the final stage of making a clothing asset, you will need to 'skin' your mode
 
 ![](./images/clothing-skinning.png)
 
-We recognise skinning adds more time to the production of making a clothing asset, so we have supplied handy tips and walkthroughs on the 🩻 [Skinning](/dev/doc/in-progress/creating-clothing/skinning/) page. Please follow this page for exact details.
+We recognise skinning adds more time to the production of making a clothing asset.
 
 
 

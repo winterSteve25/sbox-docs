@@ -12,10 +12,6 @@ updated: 2025-01-14
 Dependant on how complex / simple your model is, morphing to the human mesh can be very straightforward. 
 
 
-We appreciate that taking the time to make a human version can seem daunting and potentially very time consuming. Though we hope this break down dispels those worries.
-
-
-
 :::info
 The example shown below is a quickly done morph of a clothing piece we've found as one of the hardest clothing pieces to get right on the human. The lack of shoulders, multiple details and pieces that distort very easily. 
 
