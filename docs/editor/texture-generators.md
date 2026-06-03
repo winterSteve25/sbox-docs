@@ -13,7 +13,7 @@ In the editor Textures can be generated in a number of ways. They can be created
 You can create your own texture generators in code, and they will then be selectable.
 
 ```csharp
-[Title( "Cicle" )]
+[Title( "Circle" )]
 [Icon( "palette" )]
 [ClassName( "circlegenerator" )]
 public class CircleTextureGenerator : Sandbox.Resources.TextureGenerator

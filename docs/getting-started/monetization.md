@@ -67,6 +67,6 @@ Yes, for now. It would be awesome for a map creator to be able to say "okay I us
 
 ### Where's the pool from? How much is it?
 
-I'd like to get more transparent about the pool in the future and show the figure somewhere. For now, while we're finding out feet, it's not public. 
+I'd like to get more transparent about the pool in the future and show the figure somewhere. For now, while we're finding our feet, it's not public. 
 
 Garry's Mod's revenue is funding the development of s&box. So the fund is from Garry's Mod for now. Our hope is that one day s&box will be able to stand on its own two feet, and the fund will grow with its success.

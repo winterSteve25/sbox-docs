@@ -19,7 +19,7 @@ A NavMesh is a simplified map of traversable areas in a game world, designed to 
 
 ## Understanding NavMesh Limitations
 
-A NavMesh **is not** a detailed or precise representation of the game world; rather, it is a simplified abstraction focused solely on navigable areas. **It lacks exact height information** or precise ground geometry. Use the PhysiscsWorld alongside the NavMesh, for interactions that require specific physical details, such as placing the game object on the ground.
+A NavMesh **is not** a detailed or precise representation of the game world; rather, it is a simplified abstraction focused solely on navigable areas. **It lacks exact height information** or precise ground geometry. Use the PhysicsWorld alongside the NavMesh, for interactions that require specific physical details, such as placing the game object on the ground.
 
 # Creating a NavMesh
 
@@ -33,7 +33,7 @@ You can toggle viewing the generated mesh by clicking the button next to it.
 ![When the mesh is visible, it will update live in the scene editor 1698x940](./images/when-the-mesh-is-visible-it-will-update-live-in-the-scene-ed.mp4)
 
 
-The NavMeshis split up into multiple smaller tiles. The ==yellow== lines represent regular polygon boundaries, while the ==blue== lines represent polygon borders that are also tile boundaries.
+The NavMesh is split up into multiple smaller tiles. The ==yellow== lines represent regular polygon boundaries, while the ==blue== lines represent polygon borders that are also tile boundaries.
 
 
 # NavMesh Settings
@@ -59,7 +59,7 @@ var pos = Scene.NavMesh.GetRandomPoint( testposition, radius );
 // Get the closest point on the navmesh from another position
 var pos = Scene.NavMesh.GetClosestPoint( testposition );
 
-// Get the closest edge of the navmesg from this position
+// Get the closest edge of the navmesh from this position
 var pos = Scene.NavMesh.GetClosestEdge( testposition );
 
 // Get a path from one position to another
@@ -70,7 +70,7 @@ var path = Scene.NavMesh.CalculatePath( new CalculatePathRequest()
     Target = TargetWorldPosition
 } );
 
-// Path.Status is either Complete or Partial
+// IsValid() is true when Path.Status is Complete or Partial
 if ( path.IsValid() ) // ...
 
 // Mark the navmesh dirty, so it will be rebuilt in the background

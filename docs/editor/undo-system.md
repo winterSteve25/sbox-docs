@@ -16,7 +16,7 @@ A basic **blank** scope can be created as follows:
 
 ```csharp
 // In Game & Editor Code
-var undoScope = Scene.Editor?.UndoScope( "You Action Name");
+var undoScope = Scene.Editor?.UndoScope( "Your Action Name");
 
 // In Editor Code
 var undoScope = SceneEditorSession.Active.UndoScope( "Your Action Name" );
@@ -24,19 +24,19 @@ var undoScope = SceneEditorSession.Active.UndoScope( "Your Action Name" );
 
 ```csharp
 // Push() will turn the scope into an disposable
-using ( SceneEditorSession.Active.UndoScope( "You Action Name" ).Push() )
+using ( SceneEditorSession.Active.UndoScope( "Your Action Name" ).Push() )
 {
   // Actions that modify the scene
 }
 
-var undoScope = SceneEditorSession.Active.UndoScope( "You Action Name" );
+var undoScope = SceneEditorSession.Active.UndoScope( "Your Action Name" );
 using ( undoScope.Push() )
 {
   // Actions that modify the scene
 }
 
 {
-  using var undoScope = SceneEditorSession.Active.UndoScope( "You Action Name" ).Push();
+  using var undoScope = SceneEditorSession.Active.UndoScope( "Your Action Name" ).Push();
   // Actions that modify the scene
 }
 ```
@@ -49,7 +49,7 @@ To ensure the best performance you should keep the set of captured objects as sm
 ## GameObjects
 
 To capture GameObject changes use `undoScope.WithGameObjectChanges()`.
-You also have to specify what part of the GameObject(s) you you would like to capture.
+You also have to specify what part of the GameObject(s) you would like to capture.
 
 * `GameObjectUndoFlags.Properties`
 Is always enabled and captures basic properties of the object (Parent, Transform, Name…)
@@ -63,7 +63,7 @@ Shortcut to capture everything
   \
 
 ```csharp
-using var undoScope = SceneEditorSession.Active.UndoScope( "You Action Name" )
+using var undoScope = SceneEditorSession.Active.UndoScope( "Your Action Name" )
   .WithGameObjectChanges( gameObject, GameObjectUndoFlags.Properties | GameObjectUndoFlags.Components)
   .Push();
 ```

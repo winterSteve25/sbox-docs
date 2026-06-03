@@ -21,7 +21,7 @@ Create, open, or import movies.
 
 ### Movie Player Selection
 
-Select a or create a movie player in the current scene.
+Select or create a movie player in the current scene.
 
 ### History
 

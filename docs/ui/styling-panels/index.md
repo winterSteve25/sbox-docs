@@ -68,7 +68,7 @@ Before or after your `<root>` element, you can add a `<style>` block that is rea
 
 ### Styling in Code
 
-You can a Panel's [Style](https://sbox.game/api/Sandbox.UI.BaseStyles) directly and modify the values however you'd like via `Tick()` or `OnUpdate()`:
+You can access a Panel's [Style](https://sbox.game/api/Sandbox.UI.BaseStyles) directly and modify the values however you'd like via `Tick()` or `OnUpdate()`:
 
 ```csharp
 myPanel.Style.Width = Length.Percent(Progress * 100f);

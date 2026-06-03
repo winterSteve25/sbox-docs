@@ -22,7 +22,7 @@ All game objects can be one of three network modes. This mode determines whether
 |------|-----------|
 | `NetworkMode.Never` | This game object is never networked to others |
 | `NetworkMode.Object` | The game object will be sent to other clients as its own networked object which can have synchronized properties and RPCs |
-| `NetworkMode.Snapshot` *(default)* | The host will send this game object as part of the intitial scene snapshot when a client joins the game |
+| `NetworkMode.Snapshot` *(default)* | The host will send this game object as part of the initial scene snapshot when a client joins the game |
 
 
 The network mode can also be changed for an object in the Scene from the Inspector view.

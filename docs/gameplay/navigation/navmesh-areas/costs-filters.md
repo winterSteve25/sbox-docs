@@ -31,7 +31,7 @@ Agent preferring the cheap area (green) over the expensive area (orange).
 
 By default an agent can traverse any area.
 
-But, you can also specify which areas an agent is allowed to travers and which not.
+But, you can also specify which areas an agent is allowed to traverse and which not.
 
 ![Maze made of Forbidden areas, one agent can take shortcuts in the maze. 738x728](./images/maze-made-of-forbidden-areas-one-agent-can-take-shortcuts-in.mp4)
 

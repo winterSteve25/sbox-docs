@@ -135,7 +135,7 @@ You can make a generic Panel class by using `@typeparam` to define the name of t
 }
 ```
 
-You will then be able to use this like a regular generics class in C#, like `PanelName<string>` ect.
+You will then be able to use this like a regular generics class in C#, like `PanelName<string>` etc.
 
 In Razor, you will need to add a `T` attribute to define the type like so:
 

@@ -17,7 +17,7 @@ You can create a new variable by dragging a link from an output with the value t
 
 ![Creating a new Vector3 variable named "Example".](./images/creating-a-new-vector3-variable-named-example.png)
 
-This will create an action node that sets the new variable upon receiving an input signal. You can then create more nodes to get or set the value of the variable by righ-clicking, then looking under *Variables*.
+This will create an action node that sets the new variable upon receiving an input signal. You can then create more nodes to get or set the value of the variable by right-clicking, then looking under *Variables*.
 
 
 ![Creating a node to get or set the "Example" variable.](./images/creating-a-node-to-get-or-set-the-example-variable.png)

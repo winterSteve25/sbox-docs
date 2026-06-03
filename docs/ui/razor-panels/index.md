@@ -65,7 +65,7 @@ You can also `return` early in Razor if you don't want it to render anything bey
 
 A Panel's contents will only be rebuilt if the value returned from BuildHash() has changed from the previous value, so make sure to include certain values here to ensure the Panel updates when necessary.
 
-A Panel's contents will also rebuild if if has `pointer-events` and the cursor enters/exits/clicks the Panel.
+A Panel's contents will also rebuild if it has `pointer-events` and the cursor enters/exits/clicks the Panel.
 
 You can also force a rebuild by calling `StateHasChanged()`. This will queue the rebuild for the next frame.
 
@@ -145,7 +145,7 @@ The example above will update the Slider when IntValue changes, and IntValue whe
 
 ## Differences between Panel and PanelComponent
 
-Since a Panel is not a Component, you cannot override `OnStart`, `OnUpdate`, ect.
+Since a Panel is not a Component, you cannot override `OnStart`, `OnUpdate`, etc.
 Instead Panel has `OnAfterTreeRender(bool firstTime)` and `Tick()`.
 
 Since PanelComponent is not a Panel, you have to access it's Panel via the [PanelComponent.Panel](https://sbox.game/api/Sandbox.PanelComponent/Panel) accessor.

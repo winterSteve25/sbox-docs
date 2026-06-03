@@ -53,7 +53,7 @@ The interface `INetworkListener` has multiple methods that you can optionally ov
 |--------|-------------|
 | `OnConnected` | The client has connected to the server. They're about to start handshaking, in which they'll load the game and download all the required packages. |
 | `OnDisconnected` | The client has disconnected from the server. |
-| `OnActive` | The client is fully connected and completely the handshake. After this call they will close the loading screen and start playing. |
+| `OnActive` | The client is fully connected and completed the handshake. After this call they will close the loading screen and start playing. |
 
 
 # INetworkSpawn
