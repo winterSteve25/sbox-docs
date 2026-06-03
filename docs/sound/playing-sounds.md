@@ -92,7 +92,7 @@ void StartEngine()
 | `Pitch` | Pitch multiplier (default `1.0`, `2.0` = one octave up) |
 | `Distance` | Max audible distance in units (default 15 000) |
 | `SpacialBlend` | `0` = fully 2D, `1` = fully 3D (default `1.0`) |
-| `Occlusion` | Whether geometry can block the sound (default `true`) |
+| `OcclusionEnabled` | Whether geometry can block the sound (default `true`) |
 | `IsPlaying` | `true` while the sound is still active |
 | `Paused` | Pause or resume without stopping |
 | `Time` | Playback position in seconds (seekable) |

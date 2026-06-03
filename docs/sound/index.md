@@ -21,8 +21,8 @@ Audio components can be added to any GameObject in the editor. They handle every
 | `SoundBoxComponent` | Plays a sound within a box area |
 | `SoundscapeTrigger` | Plays a soundscape when the listener enters the trigger area |
 | `AudioListener` | Overrides where the client hears audio from, instead of the camera |
-| `LipSyncComponent` | Drives morphs with lipsync from sounds |
-| `VoiceComponent` | Records and transmits microphone input to other players |
+| `LipSync` | Drives morphs with lipsync from sounds |
+| `Voice` | Records and transmits microphone input to other players |
 
 ## In This Section
 
