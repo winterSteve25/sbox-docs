@@ -14,12 +14,17 @@ ResourceExtensions can be used to append additional data to existing GameResourc
 You create a ResourceExtension very similarly to any other GameResource, here's an example:
 
 ```csharp
-[GameResource("Clothing Extension", "extcloth", "Extra Clothing Stuff", Category = "Citizen", Icon = "iron")]
+[AssetType( Name = "Clothing Extension", Extension = "extcloth", Category = "Citizen" )]
 public class ClothingExtension : ResourceExtension<Clothing, ClothingExtension>
 {
     public string CustomName { get; set; }
     public string CustomCategory { get; set; } = "Other";
     public int CostToUnlock { get; set; } = 100;
+
+    protected override Bitmap CreateAssetTypeIcon( int width, int height )
+    {
+        return CreateSimpleAssetTypeIcon( "iron", width, height );
+    }
 }
 ```
 
@@ -46,7 +51,7 @@ Once you've set up your extension with the desired values, you can go to the "Ex
 // This will return the ResourceExtension marked as "Default" if the resource doesn't have one
 var clothingExtension = ClothingExtension.FindForResourceOrDefault( PlayerHat );
 
-Log.Info( $"The cost of the hat is {clothingExtension.CostToUnlock});
+Log.Info( $"The cost of the hat is {clothingExtension.CostToUnlock}" );
 ```
 
 ### FindForResource( Resource r )

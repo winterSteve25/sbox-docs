@@ -122,7 +122,10 @@ Publishing to Steam Workshop is made very simple:
 
 
 ```csharp
-saveEntry.Publish();
+saveEntry.Publish( new WorkshopPublishOptions
+{
+	Title = "My Awesome Save",
+} );
 ```
 
 
@@ -143,7 +146,7 @@ var query = new Storage.Query
 	TagsExcluded = { "adult" },
 
 	// Key-value filters (set during publish)
-	KeyValues = { ["type"] = "save", ["package"] = "facepunch.sandbox" },
+	KeyValues = { ["type"] = "save", ["source"] = "storage" },
 
 	// Text search
 	SearchText = "epic quest",
@@ -180,12 +183,12 @@ The `SortOrder` enum provides various ranking options:
 
 ### KeyValues
 
-Any storage published automatically have two keyvalues
+Any storage published automatically has two keyvalues
 
-* `package` - the name of the package that published it
-* `type` - the name of the storage type
+* `type` - the name of the storage type
+* `source` - always `"storage"`, identifying it as a Storage entry
 
-These are  obviously useful when you only want to find packages from a specific game
+These are useful when you only want to find a specific kind of content.
 
 ## Installing from Workshop
 
