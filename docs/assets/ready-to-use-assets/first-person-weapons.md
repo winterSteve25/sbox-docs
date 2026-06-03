@@ -85,7 +85,7 @@ As a reminder, **♻️ self-resetting parameters** set themselves immediately b
 |------------|---------------|-------------|
 | `b_attack` | ☑️ bool, ♻️ self-resets | Plays the gun's fire animation, or throws a punch. |
 | `b_attack_dry` | ☑️ bool       | Use this instead of b_attack when the gun is empty. |
-| `b_attack_hit` | ☑️ bool       | Set to true if the attack connects (used for melee hit/miss animation variations). |
+| `b_attack_has_hit` | ☑️ bool       | Set to true if the attack connects (used for melee hit/miss animation variations). |
 | `attack_hold` | 🎚️ float, 0.0↔1.0 | Staggered recoil for continuous fire; blend toward 1 when holding fire and continuously firing. |
 | `b_reload` | ☑️ bool, ♻️ self-resets | Triggers reload animation. |
 | `b_empty`  | ☑️ bool       | Set to true if magazine/clip is empty; is used to switch to different reload animations and affect weapon visuals (e.g. slide pulled back). |
@@ -109,7 +109,7 @@ As a reminder, **♻️ self-resetting parameters** set themselves immediately b
 | **Parameters** | **Type & values** | **Description** |
 |------------|---------------|-------------|
 | `camera_position_scale`<br>`camera_rotation_scale` | 🎚️ float, 0.0↔2.0 | Control the strength of camera animations. Setting the float above 1.0 makes them stronger (but only up to 2.0).  |
-| `skeleton | 🗂️ enum  | Slightly adjusts animations based on which arms you're using. 0 = human (default), 1 = citizen.   |
+| `skeleton` | 🗂️ enum  | Slightly adjusts animations based on which arms you're using. 0 = human (default), 1 = citizen.   |
 
 
 
@@ -194,7 +194,7 @@ The `aim_pitch_inertia` and `aim_yaw_inertia` parameters (🎚️ floats, exploi
 * `b_twohanded` (☑️ bool) is supported.
 * `trigger_press`  (🎚️ float, 0.0↔1.0) will make the hand visually squeeze the trigger. This is because the toolgun is not a "conventional" weapon, and it needs to be able to "fire" without that actually being an "attack".
 * `b_joystick` (☑️ bool) activates a "joystick stance".
-  *  During this, use `joystick_x` and `joystick_y` (🎚️ floats, -1.0↔1.0) to make the right thumb control the joystick. with Note that diagonal directions would be roughly ±0.71 in both axises (because the joystick is a circle, not a square).
+  *  During this, use `joystick_x` and `joystick_y` (🎚️ floats, -1.0↔1.0) to make the right thumb control the joystick. Note that diagonal directions would be roughly ±0.71 in both axes (because the joystick is a circle, not a square).
 * `firing_mode` is assigned to the state of the side switch. 0 = middle, 1 = up, 2 = down.
 * `coil` (🎚️ float, 0.0↔1.0) controls the orientation of the coil, so it can be spun. 
 
@@ -287,7 +287,7 @@ This approach has many benefits. Here's one: you can store collections of differ
 # Technical details
 
 
-Each weapon contains its own . There are three separate root hierarchies: the weapon bones, the arms bones, and the camera.
+Each weapon contains its own animgraph. There are three separate root hierarchies: the weapon bones, the arms bones, and the camera.
 
 Under `🦴weapon_root`, there's `🦴weapon_root_children`, and under that one, different bones for every weapon (as the various mechanical bits of every gun are different).
 

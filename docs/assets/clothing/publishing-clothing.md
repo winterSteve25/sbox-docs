@@ -37,7 +37,7 @@ Add your Vmdls, original Citizen model goes in 'Model'. Standard male human vers
 
 ![](./images/give-your-clothing-a-suitable-name-and-description-in-this.gif)
 
-Give your Clothing a suitable name and description. In this example, we're making a Hat, so we set the category to `Hat` and we type *"**Hats"*** for the Sub Category. So it'll show up correctly in the character menu.
+Give your Clothing a suitable name and description. In this example, we're making a Hat, so we set the category to `Hat`. So it'll show up correctly in the character menu.
 
 
 ![](./images/give-your-clothing-a-suitable-name-and-description-in-this-1.gif)
