@@ -2,7 +2,7 @@
 title: "Material"
 icon: "💎"
 created: 2024-12-05
-updated: 2024-12-16
+updated: 2024-06-15
 ---
 
 # Material
@@ -21,32 +21,37 @@ class Material
     float3 Albedo;
     float  Metalness;
     float  Roughness;
-    float3 Emission; // Emissive color
-    float3 Normal; // World normal
+    float3 Emission;
+    float3 Normal; // World-space normals
     float  TintMask;
     float  AmbientOcclusion;
-    float3 Transmission; // This should probably be TransmissiveMask
+    float3 Transmission;
     float Opacity;
 
-    //
     // This stuff is part of what describes a surface too and needed for lighting
-    //
-    float3 WorldPosition;
-	float3 WorldPositionWithOffset;
-    float4 ScreenPosition; // SV_Position
-    float3 GeometricNormal;
+    float3 WorldPosition;           // vPositionWs (vPositionWithOffsetWs + g_vHighPrecisionLightingOffsetWs.xyz)           
+	float3 WorldPositionWithOffset; // vPositionWithOffsetWs in PixelInput
+    float4 ScreenPosition;          // vPositionSs in PixelInput
 
     // baked lighting and/or anisotropic lighting
     float3 TangentNormal;
-    float3 WorldTangentU;
-    float3 WorldTangentV;    
-    float2 LightmapUV; // if D_BAKED_LIGHTING_FROM_LIGHTMAP
+    float3 WorldTangentU; // vTangentUWs in PixelInput
+    float3 WorldTangentV; // vTangentVWs in PixelInput
+    float2 LightmapUV; // if D_BAKED_LIGHTING_FROM_LIGHTMAP is enabled
 
-    float2 TextureCoords; // if TOOL_VIS
+    float2 TextureCoords; // required for ToolsVis
 };
 ```
 
 ## Helper Functions
 
-* `Material::From( PixelInput i )` can be used to process the [standard input](/rendering/shaders/reference/default-vertex-and-pixel-shader-inputs.md) and expose textures to be used directly to the Material Editor ( MET )
-* To initialize an empty material you can use `Material::Init()` and fill up the needed fields for the [Shading Model](/rendering/shaders/shading-model.md)
+* To initialize an empty material you can use `Material::Init( PixelInput i )` and fill up the needed fields for the [Shading Model](/rendering/shaders/shading-model.md)
+* If you are initializing the material in a shader that does not use built-in pixel input struct, but still utilizes standard shading model, you should use `Material::Init( float3 RelativeWorldPosition, float4 ScreenPosition )`. It will automatically setup a material with world/screen coordinate data which is necessary for the shading model.
+* `Material::lerp( Material a, Material b, float Amount )` allows to lerp between two materials, works the same way as HLSL's `lerp()` function. 
+
+## Legacy Behavior
+
+While this method is still working and compiles normally, it is recommended to use `Material::Init( PixelInput i )` instead.
+
+* `Material::From( PixelInput i )` can be used to process the [standard input](/rendering/shaders/reference/default-vertex-and-pixel-shader-inputs.md) and automatically expose all common PBR texture inputs to Material Editor. All these texture inputs will be automatically sampled and inserted into initialized material as well. You must add `#include Material.CommonInputs.hlsl` in your pixel shader code for this to work correctly. If you need more control over inputs, use different ways to initialize a new material. 
+
