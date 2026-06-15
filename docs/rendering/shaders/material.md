@@ -2,7 +2,7 @@
 title: "Material"
 icon: "💎"
 created: 2024-12-05
-updated: 2024-06-15
+updated: 2026-06-15
 ---
 
 # Material
