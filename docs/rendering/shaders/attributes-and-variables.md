@@ -84,7 +84,7 @@ CreateInputTexture2D( AlbedoImage, Linear, 8, "", "_albedo", "Material,10/30", D
 To expose the compiled texture from UI into a Texture2D you can use the following:
 
 ```csharp
-Texture2D Albedo < Channel( RGBA, Box( AlbedoImage ) ); >;
+Texture2D Albedo < Channel( RGBA, Box( AlbedoImage ), Srgb ); OutputFormat( BC7 ); >;
 ```
 
 This compiles an image into a texture using box filtering for mipmaps.
@@ -99,6 +99,28 @@ Texture2D RMA < Channel( R, Box( Roughness ), Linear );
                 Channel( B, Box( Occlusion ), Linear );  
                 Channel( A, Box( BlendMask ), Linear ); >;
 ```
+
+**What is it for?** When saving a material, editor will refer to this attribute data from your shader to see how each texture input must be compiled. So, for example, if you have **roughness**, **metalness**, **ambient occlusion** and **height mask** texture inputs assigned to **red**, **green**, **blue** and **alpha** channels of your `Texture2D` accordingly, it will generate one compiled `.vtex` texture file with all of these maps packed together. 
+
+![](./images/material_channel_packing.png)
+
+You can assign any combination of channels for one texture input this way, you decide how these channels will be utilized. For example, you can assign a color/normal map to `RGB` and some single-channel texture to `A` in one texture. If you have a specific texture that uses two color maps, you can put it in `RG`, and then use remaining green and alpha channels for anything else.
+
+It's a very versatile way to minimize the amount of texture files in a compiled material.
+
+### Output Format
+
+Another special attribute in **Texture2D** creation is `OutputFormat`. It will tell the texture compiler which image format (and compression method) will be used for it. The most common ones are `DXT5` and `BC7`, but there are more formats available for use: 
+
+| Format | Description |
+|--------|-------------|
+| `DXT1` | Compressed texture format with no alpha |
+| `DXT3` | Compressed texture format with alpha |
+| `DXT5` | Compressed texture format with alpha, generally better than **DXT3** |
+| `BC6H` | Compressed texture format with *HDR color* in 16 bit depth, no alpha | 
+| `BC7`  | Compressed texture format with alpha, most commonly used one | 
+
+There is also technically nothing stopping you from using other image formats, such as `I8`, `RGBA8888`, `R16`, `RG1616`, `RGBA16161616`, `R32F` etc. but it is generally recommened to use compressed texture formats above for materials.
 
 ## **Mip Generators**
 
