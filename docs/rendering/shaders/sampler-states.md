@@ -2,7 +2,7 @@
 title: "Sampler States"
 icon: "🎨"
 created: 2024-03-26
-updated: 2024-03-26
+updated: 2026-06-19
 ---
 
 # Sampler States
@@ -24,15 +24,28 @@ float4 color1 = MyCoolTexture.Sample( MyPixelySampler, uv );
 float4 color2 = MyOtherCoolTexture.Sample( MyPixelySampler, uv );
 ```
 
-### Annotations
+## Annotations
 
 | Annotation | Description | Possible Values |
 |------------|-------------|-----------------|
-| Filter     | Filtering mode used for texture sampling. | Point, Linear, Anisotropic |
+| Filter     | Filtering mode used for texture sampling. | Point, Bilinear, Trilinear, Anisotropic, see **Filters** section for more |
 | AddressU   | Texture coordinate addressing mode for the U direction. | Wrap, Mirror, Clamp, Border, Mirror_Once |
 | AddressV   | Texture coordinate addressing mode for the V direction. | Wrap, Mirror, Clamp, Border, Mirror_Once |
 | AddressW   | Texture coordinate addressing mode for the W direction. | Wrap, Mirror, Clamp, Border, Mirror_Once |
 | MaxAniso   | Maximum anisotropy level allowed for anisotropic filtering. | Integer value (e.g., 2, 4, 8, 16, etc.) |
+
+### Address Modes
+
+Address mode affects how texture sampling is handled outside of 0-1 UV range. 
+
+| Address Mode | Description |
+| Wrap | Repeats the texture infinitely |
+| Clamp | Extrudes the edges of texture infinitely |  
+| Border | Simply cuts off everything outside of 0-1 range |
+| Mirror | Repeats the texture infinitely, but each repeat is mirrored | 
+| Mirror_Once | Repeats and mirrors the texture, but only once, and only in one direction, otherwise it's clamped | 
+
+![](./images/samplerstates_addressmodes.png)
 
 ### Filters
 
@@ -60,8 +73,7 @@ float4 color2 = MyOtherCoolTexture.Sample( MyPixelySampler, uv );
 | ComparisonMinMagMipLinear | Comparison minify/magnify/mipmap using linear interpolation. |
 | ComparisonAnisotropic | Comparison anisotropic filtering. |
 
-
-### Common Samplers
+# Common Samplers
 
 Here are some common predefined sampler states you can use in your shaders.
 
@@ -69,14 +81,17 @@ Here are some common predefined sampler states you can use in your shaders.
 |---------------|-------------|
 | g_sAniso      | Anisotropic filtering with a maximum anisotropy level of 8. |
 | g_sBilinearClamp | Bilinear filtering with texture coordinate addressing mode set to clamp for U, V, and W directions. |
+| g_sBilinearWrap | Bilinear filtering with texture coordinate addressing mode set to wrap for U, V, and W directions. |
+| g_sBilinearMirror | Bilinear filtering with texture coordinate addressing mode set to mirror for U, V, and W directions. |
 | g_sTrilinearWrap | Trilinear filtering with texture coordinate addressing mode set to wrap for U, V, and W directions. |
 | g_sTrilinearClamp | Trilinear filtering with texture coordinate addressing mode set to clamp for U, V, and W directions. |
+| g_sTrilinearMirror | Trilinear filtering with texture coordinate addressing mode set to mirror for U, V and W directions. |
+| g_sTrilinearBorder | Trilinear filtering with texture coordinate addressing mode set to border for U, V and W directions. |
 | g_sPointClamp | Point filtering with texture coordinate addressing mode set to clamp for U, V, and W directions. |
-| g_sPointWrap  | Point filtering with texture coordinate addressing mode set to wrap for U and V directions, and clamp for W direction. |
-
-
+| g_sPointWrap  | Point filtering with texture coordinate addressing mode set to wrap for U and V directions |
+| g_sPointMirror | Point filtering with texture coordinate addressing mode set to mirror for U and V directions | 
 
 :::warning
-CreateTexture2D & Tex2D macros create and sample coupled textures and samplers, this is how older graphics APIs (DX9) and should be avoided due to it's limitations.
+CreateTexture2D & Tex2D macros create and sample coupled textures and samplers, this is how it worked for older graphics APIs (DX9) and should be avoided due to it's limitations.
 
 :::
