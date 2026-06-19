@@ -9,6 +9,8 @@ items:
   href: dynamic-reflections.md
 - name: Fog
   href: fog.md
+- name: EnvMap
+  href: envmap.md
 - name: G-Buffer
   href: g-buffer.md
 - name: Light
