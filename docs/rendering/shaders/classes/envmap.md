@@ -18,4 +18,4 @@ float3 From( float3 WorldPosition, float4 PositionSs, float3 WorldNormal, float2
 * `WorldNormal`: world-space geometry normals
 * `Roughness`: surface roughness, **0** is highest mip level and **1** is the lowest.
 
-![](./images/ambientlight_skycoloralpha.png)
+![](./images/envmap_roughness.png)
