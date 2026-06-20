@@ -244,7 +244,7 @@ private Rendering.CommandList ConstantsCommandList()
     constants.Foo = new Vector4( 0.0f, 1.0f, 2.0f, 3.0f );
     constants.Bar = new Vector4( 4.0f, 5.0f, 6.0f, 7.0f );
     
-    commands.SetConstantBuffer( "Constants", constants );
+    commands.Attributes.SetData( "Constants", constants );
     
     return commands;
 }
@@ -300,7 +300,7 @@ private Rendering.CommandList ExampleCommandList()
  
     // Sets attribute for anything after Rendering.Stage.AfterDepthPrepass 
     // until end of frame for this view from the result of the compute operation
-    commands.SetGlobal( "Result", ExampleRenderTarget );
+    commands.Attributes.Set( "Result", ExampleRenderTarget );
  
     return commands;
 }
