@@ -11,9 +11,14 @@ The API for leaderboards is publically accessible. Have fun!
 
 
 ```none
-https://public.facepunch.com/sbox/package/leaderboard/2/?ident={package_ident}
+https://public.facepunch.com/sbox/package/{ident}/leaderboard/{stat}/
 ```
 
+The `ident` and `stat` are part of the URL path. Everything below is passed as a query string parameter.
+
+### ident
+
+The package identifier of the game whose leaderboard you want, for example `facepunch.ss1`.
 
 ### stat
 
@@ -84,7 +89,7 @@ Allows a list of steamids to always show on the leaderboard, even if they're not
 
 
 ```none
-https://public.facepunch.com/sbox/package/leaderboard/2/?ident=facepunch.ss1&stat=zombies_killed
+https://public.facepunch.com/sbox/package/facepunch.ss1/leaderboard/zombies_killed/
 ```
 
 ```json
