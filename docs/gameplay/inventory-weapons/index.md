@@ -11,9 +11,9 @@ The engine ships with an inventory and weapon system, modelled loosely on Garry'
 
 There are three components:
 
-* [InventoryComponent](inventory.md) goes on your player. It holds items, tracks which one is deployed, and owns the reserve ammo pool.
-* [BaseInventoryItem](inventory.md) is anything that can live in an inventory. Usable as-is for a simple pickup.
-* [BaseWeapon](weapons.md) builds on that to make guns, melee weapons and tools.
+* [InventoryComponent](/gameplay/inventory-weapons/inventory.md) goes on your player. It holds items, tracks which one is deployed, and owns the reserve ammo pool.
+* [BaseInventoryItem](/gameplay/inventory-weapons/inventory.md) is anything that can live in an inventory. Usable as-is for a simple pickup.
+* [BaseWeapon](/gameplay/inventory-weapons/weapons.md) builds on that to make guns, melee weapons and tools.
 
 A working gun needs no code at all. Put a BaseWeapon on a prefab, fill in the properties, and it shoots, reloads, runs dry and plays its effects. You subclass when you want it to behave differently.
 

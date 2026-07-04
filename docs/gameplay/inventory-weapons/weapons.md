@@ -15,7 +15,7 @@ Make a prefab with a BaseWeapon on it and fill in the inspector:
 
 * **Shooting** has the fire rates, whether each trigger is automatic, and the `Ballistics` struct that drives the default attack: damage, pellets, range, spread and spread recovery. One pellet is a rifle, eight is a shotgun.
 * **Ammo** and **Reloading** are covered below.
-* **ViewModel** and **WorldModel** are the looks. See [Weapon Models](weapon-models.md).
+* **ViewModel** and **WorldModel** are the looks. See [Weapon Models](/gameplay/inventory-weapons/weapon-models.md).
 
 That's a working gun. Attack1 shoots, reload reloads, attack2 does nothing until you override it.
 

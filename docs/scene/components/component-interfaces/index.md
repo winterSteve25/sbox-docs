@@ -14,11 +14,11 @@ There are various interfaces that can be given to components for specific purpos
 
 A component marked with `ExecuteInEditor` will also execute these methods in edit mode:
 
-* [OnAwake](/dev/doc/scene/components/component-methods/#h-onawake)
-* [OnEnabled](/dev/doc/scene/components/component-methods/#h-onenabled)
-* [OnDisabled](/dev/doc/scene/components/component-methods/#h-ondisabled)
-* [OnUpdate](/dev/doc/scene/components/component-methods/#h-onupdate)
-* [OnFixedUpdate](/dev/doc/scene/components/component-methods/#h-onfixedupdate)
+* [OnAwake](/scene/components/component-methods.md#onawake)
+* [OnEnabled](/scene/components/component-methods.md#onenabled)
+* [OnDisabled](/scene/components/component-methods.md#ondisabled)
+* [OnUpdate](/scene/components/component-methods.md#onupdate)
+* [OnFixedUpdate](/scene/components/component-methods.md#onfixedupdate)
 
 
 ### Sample code
@@ -177,9 +177,9 @@ public sealed class ClickToDamage : Component
 
 # INetworkListener
 
-A component with this interface can react to [📆 Network Events](/dev/doc/networking/network-events/#h-inetworklistener).
+A component with this interface can react to [📆 Network Events](/networking/network-events.md#inetworklistener).
 
 
 # INetworkSpawn
 
-A component with this interface can react to [📆 Network Events](/dev/doc/networking/network-events/#h-inetworkspawn)
+A component with this interface can react to [📆 Network Events](/networking/network-events.md#inetworkspawn)
