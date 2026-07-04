@@ -1,4 +1,6 @@
 items:
+- name: Camera Effects
+  href: camera-effects.md
 - name: Hammer Mesh
   href: hammer-mesh.md
 - name: Player Controller

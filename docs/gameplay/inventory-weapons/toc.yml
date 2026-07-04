@@ -1,0 +1,7 @@
+items:
+- name: Inventory
+  href: inventory.md
+- name: Weapons
+  href: weapons.md
+- name: Weapon Models
+  href: weapon-models.md

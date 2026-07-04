@@ -13,6 +13,10 @@ Core gameplay systems — input, navigation, terrain, and more.
 
 Keyboard, mouse, and controller input handling.
 
+## [Inventory & Weapons](/gameplay/inventory-weapons/index.md)
+
+Built-in inventory, pickups, and weapon components.
+
 ## [Navigation](/gameplay/navigation/index.md)
 
 NavMesh generation, pathfinding agents, areas, and links.
