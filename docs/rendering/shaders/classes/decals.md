@@ -13,7 +13,6 @@ updated: 2026-06-22
 
 ```cpp
 Decals::From( float3 WorldPosition, in out Material material )
-
 ```
 
 * `WorldPosition` is the world-space pixel position
@@ -116,17 +115,18 @@ To avoid cluttering the main struct with every single feature, there is a dedica
 
 At the current moment, extra data struct looks like this:
 
-| Byte Offset | Type | Property |
-|-------------|------|----------|
-| 0  | float4 | Sheet Data | 
-| 16 | uint   | Sequence Index | 
-| 20 | float  | Color Mix Amount | 
-| 24 | uint   | Feature flags (unused?) | 
-| 28 | uint   | Heightmap bindless ID | 
-| 32 | float  | Parallax strength | 
-| 36 | uint   | SamplerState bindless ID | 
-| 40 | uint   | Emission bindless ID | 
-| 44 | float  | Emission strength |
+| Type | Property Description | Byte Offset |
+|------|----------|-------------|
+| float4 | Sheet Data | 0 |
+| uint | Sequence Index | 16 |
+| float | Color Mix Amount | 20 |
+| uint | Feature flags (unused) | 24 |
+| uint | Heightmap Bindless ID | 28 |
+| float | Parallax Strength | 32 |
+| uint | SamplerState Bindless ID | 36 |
+| uint | Emission Bindless ID | 40 |
+| float | Emission Strength | 44 |
+| uint | Height Coverage Settings (packed) | 48 |
 
 Not every decal has its own extra data allocated in this buffer. By default, no extra data is allocated at all if decal does not match at least one of these conditions:
 
@@ -150,7 +150,35 @@ if ( decal.ExtraDataOffset >= 0 )
     uint nSamplerBindlessID = DecalsExtraDataBuffer.Load( decal.ExtraDataOffset + 36 );
     uint nEmissionBindlessID = DecalsExtraDataBuffer.Load( decal.ExtraDataOffset + 40 );
 }
+```
 
+### Height Coverage
+
+Height Coverage settings are encoded in a single **uint**. Use the example below to load settings, and extract floats for coverage amount/range.
+
+```cpp
+// Height coverage is available ONLY if decal has a valid height texture!
+// So make sure to get these values after checking for valid heightmap first.
+if ( nHeightmapBindlessId > 0 )
+{
+	// Load height coverage settings from extra buffer
+	uint nHeightCoverageSettingsPacked = DecalsExtraDataBuffer.Load( decal.ExtraDataOffset + 48 );
+
+	// Decode settings and get coverage amount & range from them
+	float flCoverageAmount = 1.0f - (( heightCoverageSettings & 0xFF ) / 255.0);
+	float flCoverageRange = ( ( heightCoverageSettings >> 8 ) & 0xFF ) / 255.0;
+}
+```
+
+Also keep in mind that both coverage settings are hardcode clamped:
+* Coverage Amount is clamped within `0 to 1` range
+* Coverage Range is clamped within `0 to 0.5` range
+
+Standard math for calculating coverage & range looks like this:
+
+```cpp
+float flCoverageRangeClamped = min( flCoverageRange, min( flCoverageAmount, 1.0 - flCoverageAmount ) );
+float flHeightCoverageMask = smoothstep( flCoverageAmount - flCoverageRangeClamped, flCoverageAmount + 0.001, flHeightmap );
 ```
 
 ## Helper Functions
