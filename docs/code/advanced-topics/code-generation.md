@@ -250,7 +250,7 @@ public static class MyStaticClass
     m.Resume();
   }
 
-  internal static T OnWrapAnything( WrappedMethod<T> p, params object[] args )
+  internal static T OnWrapAnything( WrappedMethod<T> m, params object[] args )
   {
     m.Resume();
   }
